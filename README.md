@@ -35,6 +35,8 @@ Performance:
 |2        | 40 Mbps   |21%  |
 
 ### Transmit also audio, does not work...
+cvlc v4l2:// :input-slave=alsa://hw:1,0 :v4l2-vdev="/dev/video0" :v4l2-width=1280 :v4l2-height=720 :v4l2-chroma="mjpg" --sout '#transcode{acodec=mpga,ab=128,channels=2,samplerate=44100,threads=4,audio-sync=1}:rtp{mux=ts,sdp=rtsp://:8554/}'
+
 Best result so far: audio track sent, but there is no sound: `cvlc v4l2:// :input-slave=alsa://hw:1,0 :v4l2-vdev="/dev/video0" :v4l2-width=640 :v4l2-height=360 :v4l2-chroma="MJPG" --sout '#rtp{sdp=rtsp://:8554/}'`
 
 
